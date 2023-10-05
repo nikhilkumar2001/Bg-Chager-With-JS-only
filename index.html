@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    const h1 = document.createElement('h1')
+    h1.innerHTML = "Background Color Changer With JS Only"
+    h1.style.textAlign = "center"
+    h1.style.fontSize = "25px"
+    h1.style.color = "#fff"
+    document.body.appendChild(h1)
+
+
+    const h2 = document.createElement('h2')
+    h2.className = "h2"
+    h2.id = "#fff"
+    h2.style.color = "#fff"
+    h2.style.textAlign = 'center'
+    h2.style.cursor = "pointer"
+    h2.innerHTML = "Click to default"
+    document.body.appendChild(h2)
+
+
+
+    function spanbtn(btn){
+        const span = document.createElement('span')
+        span.innerHTML = `${btn}`
+        span.id = `${span.innerHTML}`
+        span.className = "button"
+        span.style.color = "white"
+        span.style.fontSize = "20px"
+        span.style.padding = "10px"
+        span.style.cursor = "pointer"
+        span.style.display = "flex"
+        span.style.justifyContent = "center"
+        span.style.alignItems = "center"
+        document.body.appendChild(span)
+    }
+    spanbtn("grey")
+    spanbtn("red")
+    spanbtn("purple")
+    spanbtn("blue")
+
+    const button = document.querySelectorAll('.button')
+    const body = document.querySelector("body")  
+    button.forEach(function (btn){
+        btn.addEventListener('click', function(e){
+            if (e.target.id === "grey") {
+                body.style.backgroundColor = e.target.id
+            }
+            if(e.target.id === "red"){
+                body.style.backgroundColor = e.target.id
+            }
+            if(e.target.id === "purple"){
+                body.style.backgroundColor = e.target.id
+            }
+            if(e.target.id === "blue"){
+                body.style.backgroundColor = e.target.id
+            }
+        })
+    });
+    h2.addEventListener('click', function(e){
+        if(e.target.id === "#fff"){
+            body.style.background = e.target.id
+        }
+    })
+
+</script>
+</html>
